@@ -2,6 +2,9 @@
 ## Project: FOR-NM
 # Modified from QuEST scripts: Github Link: 
 
+#Added rolling mean smoothing, dropping zeros in SpC, improved changepoint detection,
+#interactive plots to 
+
 ## Script to estimate discharge using dilution gauging for multiple files at a time for the NM site
 ## press Command+Option+O to collapse all sections and get an overview of the workflow!
 ##==============================================================================
@@ -409,6 +412,6 @@ for (i in seq_along(csvs)) {
   # tried second derivative method ( did you try on smooth)
   # tried changepoint of peaks and valleys method 
   #tried hampel filtering 
-# drop measurements that have 0s in them
-# interactive visualization while dropping rows from files, choose index interactively 
+#Fix directories and Gdrive flows 
+
 ####################################
