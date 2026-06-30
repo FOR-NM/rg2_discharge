@@ -20,3 +20,6 @@ In this repo you will find semi-automated discharge calculations for salt slugs 
     ├── 00_formattingYSIfiles_NM.R
     └── 01_calculatingQ_NM.R
 ```
+## 👥 Contributors & Contact
+Adapted from Manuela Londono  https://github.com/mmmlondono
+by Marcela Mendoza https://www.linkedin.com/in/marcela-mendoza-ph-d-2a32378b/
