@@ -409,7 +409,7 @@ for (i in seq_along(csvs)) {
 ####################################
 #### TO DO####
 # improve changepoint detection algorithm: tried multiple algorithms and filters
-  # tried second derivative method ( did you try on smooth)
+  # tried second derivative method ( did you try on smooth?)
   # tried changepoint of peaks and valleys method 
   #tried hampel filtering 
 #Fix directories and Gdrive flows 
