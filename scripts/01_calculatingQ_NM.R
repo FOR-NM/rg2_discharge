@@ -1,9 +1,12 @@
 ##==============================================================================
 ## Project: FOR-NM
-# Modified from QuEST scripts: Github Link: 
 
-#Added rolling mean smoothing, dropping zeros in SpC, improved changepoint detection,
-#interactive plots to 
+# Modified from QuEST scripts: 
+##Author: Manuela Londono
+##Github Link: 
+
+#Added rolling mean smoothing, dropping trailing zeros in SpC, improved changepoint detection,
+#interactive plots to remove initial noise 
 
 ## Script to estimate discharge using dilution gauging for multiple files at a time for the NM site
 ## press Command+Option+O to collapse all sections and get an overview of the workflow!
@@ -56,8 +59,8 @@ library(ggplot2)
 #################################
 #### load data from Google drive ####
 # this is the formatted folder
-Saltslugs <- "/Users/marcelamendoza/Documents/UNM/RG2/code/data /formatted/" 
-figure_folder <- "/Users/marcelamendoza/Documents/UNM/RG2/code/saltslug_figs/"
+Saltslugs <- "data/formatted/" 
+figure_folder <- "figures/"
 
 # list all CSV files in the folder
 Saltslugs_csvs <- list.files(path = Saltslugs, pattern = "\\.csv$")
@@ -156,7 +159,7 @@ for (i in seq_along(csv_list)) {
 
 drive_download(as_id(Q_sheet$id), path = "field_data/salt.csv", type = "csv", overwrite = TRUE)
 
-salt <- read.csv("/Users/marcelamendoza/Documents/UNM/RG2/code/data /field_data/salt.csv") %>%
+salt <- read.csv("field_data/salt.csv") %>%
   janitor::clean_names() %>%
   dplyr::rename(
     DataID     = site,
@@ -352,7 +355,7 @@ for (i in seq_along(csv_clean)) {
   
   p <- ggplot(data = df, aes(x = DateTime, y = SPC.uS.cm.)) +
     geom_point() +
-    ggtitle(Saltslugs_csvs$name[i]) +
+    ggtitle(Saltslugs_csvs[i]) +
     annotate("text", x = mean(df$DateTime), y = max(df$SPC.uS.cm.),
              label = df$flag_notes[1], color = "#CD2626", size = 4, fontface = "bold") +
     annotate("text", x = mean(df$DateTime), y = max(df$SPC.uS.cm.) * 0.90,
@@ -364,7 +367,7 @@ for (i in seq_along(csv_clean)) {
     annotate("text", x = mean(df$DateTime), y = max(df$SPC.uS.cm.) * 0.75,
              label = paste(df$Q[1], "L/sec"), color = "goldenrod2", size = 4)
   
-  ggsave(paste0("saltslug_figs/", Saltslugs_csvs$name[i], "flags.png"), plot = p)
+  ggsave(paste0("figures/", Saltslugs_csvs[i], "flags.png"), plot = p)
   print(p)
 }
 
@@ -412,6 +415,6 @@ for (i in seq_along(csvs)) {
   # tried second derivative method ( did you try on smooth?)
   # tried changepoint of peaks and valleys method 
   #tried hampel filtering 
-#Fix directories and Gdrive flows 
+#Fix directories and Gdrive flows , keep it local and have a separate script to upload files 
 
 ####################################

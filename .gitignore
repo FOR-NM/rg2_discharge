@@ -5,5 +5,7 @@
 .DS_Store
 .quarto
 
-data/
-outputs/
+data/*
+!data/.gitkeep
+figures/*
+!figures/.gitkeep
