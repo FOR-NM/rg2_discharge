@@ -28,7 +28,8 @@
 #### Import Data ####
 #####################
 # set up Google Drive folder
-Saltslugs <- "/Users/marcelamendoza/Documents/UNM/RG2/code/data /Slugs"
+Saltslugs <- "data/raw/"
+output_path<-"data/formatted/"
 
 # list and filter CSV files with "YSI" in their names
 YSI_files <-  list.files(path = Saltslugs, pattern = "\\.csv$")
@@ -55,7 +56,7 @@ for (i in seq_along(ysi_list)) {
   df <- ysi_list[[i]]
   
   # make date into date format
-  df$Date <- as.Date(df$Date, format = "%m/%d/%y")
+  df$Date <- as.Date(df$Date, format = "%m/%d/%Y")
   # update the data frame in the list
   ysi_list[[i]] <- df
 }

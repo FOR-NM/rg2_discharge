@@ -476,3 +476,28 @@ logger in water at 12:20",
 7/7/2026,kanaya1@unm.edu,Santa Fe,USF25,12/12/2025,8:30:00,3.1,Connected flow,YSI,,28.44,,8:23:00,42.1,Yes,13,Bottom of open end,,,,
 7/7/2026,kanaya1@unm.edu,Santa Fe,USF24,12/5/2025,11:15:00,0.4,Connected flow,YSI,,24.23,,13:00:00,55.3,,,,,,,"Memory filled up, so use SpC @55.7 to complete the curve"
 7/7/2026,kanaya1@unm.edu,Santa Fe,USF25,12/5/2025,11:00:00,2.1,Connected flow,YSI,,24.06,,11:00:00,52.5,,,,,,,possible baseline shift on SpC- called it at 54.4
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF19,7/10/2026,15:00:00,5.2,Connected flow,Solinst,,4.62,,15:05:00,33.5,Yes,5,Bottom of open end,,,,
+,kanaya1@unm.edu,Santa Fe,USF22,7/9/2026,12:36:00,14.6,Pooled,Solinst,,,,,,,,,,,,
+,,,USF26,7/9/2026,9:00:00,,Dry,,,,,,,,,,,,,
+,,,USF03,7/9/2026,9:15:00,11.7,Connected flow,YSI,,225.03,,9:20:00,50.5,Yes,24,,,,,
+,,,USF21,7/10/2026,10:30:00,8.7,Connected flow,YSI,,121.48,,10:26:00,30.8,,,,,,,Stream reach shortened to ~15m due to low flow; salt poured in funnel stream
+,,,USF13,7/10/2026,11:00:00,8.1,Connected flow,Solinst,,36.31,,11:15:00,25,Yes,10,Bottom of open end,,,,Stream reach shortened to ~15m due to low flow; salt poured in funnel stream
+,,,USF29,7/10/2026,12:00:00,,Connected flow,Solinst,,5.72,,,,,,,,,,
+,,,USF17,7/10/2026,12:15:00,,,Solinst,,6.05,,12:15:00,,,,,,,,
+,,,USF12,7/9/2026,8:00:00,12,Connected flow,,,,,,,Yes,26.5,Bottom of open end,,,,
+,,,USF15,7/10/2026,13:30:00,,Connected flow,Solinst,,12.05,,13:30:00,,,,,,,,Stream reach shortened
+,,,USF31,7/10/2026,,,,Solinst,,7.65,,,,,,,,,,
+,,,USF24,7/9/2026,8:45:00,11.7,Pooled,,,,,,,,,,,,,PT is dry 
+,,,USF25,7/9/2026,9:00:00,,Dry,,,,,,,,,,,,,PT + scan dry
+,,,USF04,7/9/2026,11:15:00,,Pooled,,,,,,,,,,,,,
+,,,USF41,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
+,,,USF40,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
+,,,USF16,7/10/2026,13:30:00,12.8,Connected flow,YSI,,27.03,,13:40:00,24.6,Yes,9.5,Bottom of open end,,,,"YSI died around 14:10, was quickly restarted. Died again at 15:00, memory filled "
+,,,USF28,7/10/2026,11:45:00,,Connected flow,Solinst,,3.93,,,,,,,,,,Stream reach shortened ~5m
+,,,USF18,,12:15:00,,Connected flow,Solinst,,8.29,,,,,,,,,,
+,,,USF05,7/9/2026,11:00:00,12.2,Connected flow,YSI,,230.25,,10:55:00,0.0532,Yes,6,Bottom of open end,,,,
+,,,USF23,7/9/2026,12:45:00,14.8,Connected flow,Solinst,,5.16,,12:43:00,68.5,,,,,,,stream reached shortened to ~6m
+,,,USF02,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
+,,,USF14,7/10/2026,11:15:00,9.1,Connected flow,YSI,,110.14,,11:25:00,31.3,Yes,17,gauge ,,,,reach adjusted 
+,,,USF20,7/9/2026,13:45:00,15.4,Connected flow,YSI,,219.2,,13:51:00,51.9,Yes,52,gauge ,,,,
+,,,USF07,7/9/2026,12:45:00,15.2,Connected flow,Solinst,,6.07,,,77.5,Yes,2.7,Bottom of open end,,,,"YSI for anallary data, PT mostly out of water"

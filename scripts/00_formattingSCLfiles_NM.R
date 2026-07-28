@@ -5,6 +5,10 @@
 ## press Command+Option+O to collapse all sections and get an overview of the workflow!
 ##==============================================================================
 
+### Manual edits: (to do, automate this)
+### `2026-03-13_USF24_Teak03_SCL.csv` is already formatted, deleting from raw folder for now 
+### `2026-06-02_NMUSF24_SCL_Sporty.csv` has typo in conductivity column , manual editing for now 
+
 ##############
 ## Packages ##
 ##############
@@ -27,7 +31,8 @@ library(data.table)
 #### Import Data ####
 #####################
 # set up path 
-Saltslugs <- "/Users/marcelamendoza/Documents/UNM/RG2/code/data /Slugs"
+Saltslugs <- "data/raw/"
+output_path<-"data/formatted/"
 
 # list and filter CSV files with "SCL" in their names
 SCL_files <- list.files(path = Saltslugs, pattern = "\\.csv$")
@@ -36,10 +41,8 @@ SCL_files <- SCL_files[grepl("SCL", SCL_files)]
  
 # create an empty list to store the cleaned data frames
 scl_list <- lapply(seq_along(SCL_files), function(i) {
-  
-  # read the CSV file, skipping the first 13 rows (header is on row 14)
-  fread(paste0(Saltslugs, "/", SCL_files[i]))
-  # reading differently for 03_13 files 
+  fread(paste0(Saltslugs, SCL_files[i]))
+  # reading automatically without having to skip lines w fread 
 })
 
 # assign names to the list elements based on the file names
@@ -49,7 +52,7 @@ names(scl_list) <- SCL_files
 str(scl_list)
 
 ############################
-#### Format date column ####
+#### Preprocess ####
 ############################
 # loop through each data frame in the list
 for (i in seq_along(scl_list)) {
@@ -57,69 +60,42 @@ for (i in seq_along(scl_list)) {
   df <- scl_list[[i]]
   
   # make date into date fomat
-  df$Date <- as.Date(df$Date, format = "%m/%d/%y")
-  # update the data frame in the list
-  scl_list[[i]] <- df
-}
-################################
-#### Format time column to match YSI ####
-################################
-for (i in seq_along(scl_list)) {
-  # access the current data frame
-  df <- scl_list[[i]]
-  
-  # make date into date fomat
+  df$Date <- as.Date(df$Date, format = "%m/%d/%Y")
+  # Format time column to match YSI ####
   df$Time <- format(as.POSIXct(df$Time, format = "%I:%M:%S %p"), format = "%H:%M:%S")
-  # update the data frame in the list
-  scl_list[[i]] <- df
-}
-
-
-
-###################################
-#### Format names to match YSI ####
-###################################
-for (i in seq_along(scl_list)) {
-  # access the current data frame
-  df <- scl_list[[i]]
-  
-  # rename columns
+  # rename columns to match YSI 
   df <- df %>%
     dplyr::rename(Temp.C. = TEMPERATURE,
-           Conductivity = CONDUCTIVITY)
-         
-  scl_list[[i]] <-  df
-}
-
-# check the contents of the list
-str(scl_list)
-
-#########################################
-#### Calculate specific conductivity ####
-#########################################
-for (i in seq_along(scl_list)) {
-  # access the current data frame
-  df <- scl_list[[i]]
-  
+                  Conductivity = CONDUCTIVITY)
   # calculate specific conductivity
   df <- df %>%
     mutate(SPC.uS.cm. = Conductivity/(1+0.02*(Temp.C. - 25)))
-
-  scl_list[[i]] <-  df
+  # update the data frame in the list
+  scl_list[[i]] <- df
 }
+
+
 
 ####################################
 #### Save edited slugs to Local folder ####
 ####################################
 # loop through each data frame in the list
+overwrite_flag=TRUE 
+
 for (i in seq_along(scl_list)) {
   # Access the current data frame
   df <- scl_list[[i]]
-  filename<- paste0("/Users/marcelamendoza/Documents/UNM/RG2/code/data /formatted/", SCL_files[i])
+  filename<- paste0(output_path, SCL_files[i])
   
   # Do not overwrite formatted files: To do:  have a flag to switch this on or off 
   if (file.exists(filename)) {
+    if(overwrite_flag){
+      write.csv(df, filename, row.names=FALSE, quote=FALSE)
+      print('successfully overwrote')
+    }
+    else{
     next
+      }
   } else {
     # save new data frame
     write.csv(df, filename, row.names=FALSE, quote=FALSE)

@@ -1,7 +1,7 @@
 ##==============================================================================
 ## Project: FOR-NM
 
-# Modified from QuEST scripts: 
+# Modified from QuEST scripts by Marcela Mendoza: 
 ##Author: Manuela Londono
 ##Github Link: 
 
@@ -192,8 +192,9 @@ salt[salt == ""] <- NA
 for (i in seq_along(csv_list)) {
   df            <- csv_list[[i]]
   df$DataID     <- str_extract(names(csv_list)[i], "USF\\d+")
+  print(str_extract(names(csv_list)[i], "USF\\d+"))
   csv_list[[i]] <- df
-}
+}  
 
 # remove duplicate DataID column that YSI files already contain
 for (i in seq_along(csv_list)) {
@@ -208,7 +209,7 @@ for (i in seq_along(csv_list)) {
 combine_info <- function(df, info) {
   df   <- mutate(df,   Date = as.Date(Date))
   info <- mutate(info, Date = as.Date(Date))
-  merge(df, info, by = c("DataID", "Date"), all.x = TRUE)
+  merge(df, info, by = c("DataID", "Date"))
 }
 
 csvs <- lapply(csv_list, function(df) {
@@ -372,8 +373,12 @@ for (i in seq_along(csv_clean)) {
 }
 
 ####################################
-#### Save Q data frame to Drive ####
+#### Save Q data frame to Drive #### TO DO, fix this for your workflow 
 ####################################
+
+#save Q dataframe locally first 
+write.csv(mergedQ, "field_data/Q.csv")
+
 # download existing Q file, append new results, re-upload
 (Q_drive <- drive_get("https://drive.google.com/drive/folders/1UkRaYRBePgY9XU90_3DvURNGGEWbCew0"))
 Q_files  <- drive_ls(Q_drive)
