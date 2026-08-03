@@ -6,20 +6,15 @@
 ##==============================================================================
 # Modified by Marcela Mendoza 6/16/2026  FOR_NM 
 
+
+# Manual edits: 
+# 2026-01-20_NMUSF02_NMUSF24_YSI_Teak has to be separated into two files 
+# run split_file.R  (R folder) with appropriate index 
+
 ##############
 ## Packages ##
 ##############
 # library(googledrive) 
-
-####################################
-## Clear folders that we will use ##
-####################################
-# list and delete all files in the folder
-#files <- list.files(path = "data", full.names = TRUE)
-#file.remove(files)
-
-#files <- list.files(path = "googledrive", full.names = TRUE)
-#file.remove(files)
 
 ### TO DO #### 
 # create directory for formatted files 
@@ -64,21 +59,36 @@ for (i in seq_along(ysi_list)) {
 ####################################
 #### Save edited slugs to local folder ####
 ####################################
+
+overwrite_flag=TRUE 
 # loop through each data frame in the list
 for (i in seq_along(ysi_list)) {
   # Access the current data frame
   df <- ysi_list[[i]]
-  filename<- paste0("/Users/marcelamendoza/Documents/UNM/RG2/code/data /formatted/", YSI_files[i])
+  filename<- paste0(output_path, YSI_files[i])
   
   # save new data frame
   # Do not overwrite formatted files: To do:  have a flag to switch this on or off 
   if (file.exists(filename)) {
-    next
+    if(overwrite_flag){
+      write.csv(df, filename, row.names=FALSE, quote=FALSE)
+      print('successfully overwrote')
+    }
+    else{
+      next
+    }
   } else {
     # save new data frame
     write.csv(df, filename, row.names=FALSE, quote=FALSE)
   }
 }
+
+####################################
+#### Split file for 01_20_26 ####
+####################################
+# 2026-01-20_NMUSF02_NMUSF24_YSI_Teak has to be separated into two files 
+
+source('R/split_file.R') 
   
 ####################################
 #### End of script ####

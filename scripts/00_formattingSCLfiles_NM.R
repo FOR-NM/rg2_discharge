@@ -5,7 +5,7 @@
 ## press Command+Option+O to collapse all sections and get an overview of the workflow!
 ##==============================================================================
 
-### Manual edits: (to do, automate this)
+### Manual edits: (to do: automate this)
 ### `2026-03-13_USF24_Teak03_SCL.csv` is already formatted, deleting from raw folder for now 
 ### `2026-06-02_NMUSF24_SCL_Sporty.csv` has typo in conductivity column , manual editing for now 
 

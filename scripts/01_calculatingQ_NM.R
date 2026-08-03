@@ -38,14 +38,16 @@
 lapply(c("plyr", "dplyr", "ggplot2", "cowplot",
          "lubridate", "tidyverse"), require, character.only = T)
 
-library(changepoint)   # calculate changepoint in data
+library(changepoint)   # changepoint detection 
 library(googlesheets4)
 library(tibble)
 library(janitor)
 library(googledrive)
-library(pracma) # might not use
+library(pracma) # finds peaks 
 library(plotly)
 library(ggplot2)
+library(signal) # butterworth filter 
+
 
 ####################################
 ## Clear folders that we will use ##
@@ -119,37 +121,76 @@ for (i in seq_along(csv_list)) {
 ######################################################################
 #### Calculate average background SpC and Changepoint ####
 ######################################################################
+find_valley<- function(xs, peak_index) {
+  left <- peak_index
+  
+  while (left > 2 &&
+         xs[left-1] <= xs[left]) {
+    left <- left-1
+  }
+  return(left)
+}
+
+legend_colors <- c("changepoint" = "red")
+
 for (i in seq_along(csv_list)) {
   df <- csv_list[[i]]
   df <- na.omit(df)
-  
-  
   #  method - Marcela 
-  #first use rolling mean 
-  df$spc_smooth <- rollmedian(df$SPC.uS.cm., k=7, fill='extend')
-  #k sets the half window (total window= 2k+1)
-  #t0=3 is the threashold, 3 standard deviations 
-  #df$spc_smooth<- hampel(df$spc_smooth, k=3, t0=3)$y
+  # center data first 
+  df$spc_smooth<- df$SPC.uS.cm.  #initialize with signal 
+  df$mean= mean(df$spc_smooth) 
+  df$spc_smooth= df$spc_smooth- df$mean  #center data before filtering 
+  filter_order=2
+  W=.04 #cuttoff freq * fs/2   fs= 1 hz for ysi .5 for scl 
+  bf<-butter(n = filter_order, W = W, type = "low")
+  df$spc_smooth <- filtfilt(bf, df$spc_smooth)
+  #add back mean 
+  df$spc_smooth<- df$spc_smooth+df$mean 
+  #remove first 10 samples (10 seconds- 20sec of data) , this removes filter large spike at beginning
+  df<-df[-(1:10), ]
+  #then use rolling mean for smoothing 
+  df$spc_smooth <- rollmedian(df$spc_smooth, k=15, fill='extend') 
   
-  peak_idx <- which.max(df$spc_smooth)
+  peak_idx <- which.max(df$spc_smooth) #this is the highest point in peak 
   # data before peak
-  y_pre <- df$spc_smooth[1:peak_idx]
+  #y_pre <- df$spc_smooth[1:peak_idx]
+  valley_idx<- find_valley(df$spc_smooth, peak_idx)  # corresponds to changepoint 
   
-  # detect first changepoint in the SpC timeseries - Manuela's method 
-  cpt               <- cpt.mean(df$spc_smooth, penalty = "SIC", method = "PELT", minseglen = 2)
+  # testing changepoint in mean and variance , should be stricter in catching start of curve 
+  #cpt <- cpt.meanvar(df$spc_smooth, penalty = "SIC", method = "PELT", minseglen = 20)
   #changepoint_index <- tail(cpts(cpt), 1) #last point before the peak 
-  idx <- cpts(cpt)
+  #idx <- cpts(cpt)
   #enforce positive derivative with linear regression estimation 
-  idx <- idx[sapply(idx, function(i) {
-    coef(lm(df$spc_smooth[i:min(i+20-1,length(df$spc_smooth))] ~ seq_len(min(20,length(df$spc_smooth)-i+1))))[2] > 0
-  })] 
-  changepoint_index <- idx[1] # first changepoint which satisfies derivative condition
+  #idx <- idx[sapply(idx, function(i) {
+  #  coef(lm(df$spc_smooth[i:min(i+20-1,length(df$spc_smooth))] ~ seq_len(min(20,length(df$spc_smooth)-i+1))))[2] > 0
+  #})] 
+  #changepoint_index <- idx[1] # first changepoint which satisfies derivative condition
+  
+  changepoint_index <- valley_idx
   
   df$medianSPC            <- median(df$SPC.uS.cm.[1:changepoint_index], na.rm = TRUE)
   df$changepoint_index    <- changepoint_index
   df$changepoint_datetime <- df$DateTime[changepoint_index]
   
   csv_list[[i]] <- df
+  
+  # ####### plot 
+  vlines <- data.frame(
+    xintercept = c(df$changepoint_datetime[1]), # add peak_results here 
+    type       = c("changepoint")
+  )
+  
+  p <- ggplot(data = df, aes(x = DateTime, y = SPC.uS.cm.)) +
+    geom_point() +
+    ggtitle(Saltslugs_csvs[i]) +
+    geom_vline(data = vlines, aes(xintercept = xintercept, color = type, linetype = type)) +
+    scale_color_manual(values = legend_colors) +
+    scale_linetype_manual(values = c("changepoint" = "dashed")) +
+    labs(color = "colors", linetype = "colors")+
+    geom_line(data=df, aes(x = DateTime, y = spc_smooth, color = "Curve 2"), size = 1)
+  
+  print(p)
 }
 
 ########################
@@ -209,7 +250,7 @@ for (i in seq_along(csv_list)) {
 combine_info <- function(df, info) {
   df   <- mutate(df,   Date = as.Date(Date))
   info <- mutate(info, Date = as.Date(Date))
-  merge(df, info, by = c("DataID", "Date"))
+  merge(df, info, by = c("DataID", "Date"),  all.x = TRUE)
 }
 
 csvs <- lapply(csv_list, function(df) {
@@ -220,7 +261,7 @@ csvs <- lapply(csv_list, function(df) {
 })
 
 #################################################################
-#### Visualize where the change pioint is to start measuring ####
+#### Visualize where the changepoint is to start measuring ####
 #################################################################
 legend_colors <- c("changepoint" = "red", "injection" = "blue")
 
