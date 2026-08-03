@@ -142,7 +142,7 @@ for (i in seq_along(csv_list)) {
   df$mean= mean(df$spc_smooth) 
   df$spc_smooth= df$spc_smooth- df$mean  #center data before filtering 
   filter_order=2
-  W=.04 #cuttoff freq * fs/2   fs= 1 hz for ysi .5 for scl 
+  W=.035 #cuttoff freq * fs/2   fs= 1 hz for ysi .5 for scl 
   bf<-butter(n = filter_order, W = W, type = "low")
   df$spc_smooth <- filtfilt(bf, df$spc_smooth)
   #add back mean 
