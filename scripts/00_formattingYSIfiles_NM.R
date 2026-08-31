@@ -22,6 +22,7 @@
 # set up Google Drive folder
 Saltslugs <- "data/raw/"
 output_path<-"data/formatted/"
+dir.create(output_path)
 
 # list and filter CSV files with "YSI" in their names
 YSI_files <-  list.files(path = Saltslugs, pattern = "\\.csv$")

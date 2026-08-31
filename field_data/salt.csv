@@ -139,7 +139,7 @@ logger in water at 12:20",
 9/27/2024,mlondono@unm.edu,Santa Fe,USF05,9/25/2024,11:00:00,6.9,Connected flow,YSI,40,303.92,,11:09:00,45.9,Yes,5.5,top of open end,2024-09-25_NMUSF05_YSI_Jacob.csv,Good,with USF 20 data,
 9/27/2024,mlondono@unm.edu,Santa Fe,USF07,9/25/2024,12:30:00,NA,Connected flow,Solinst,20,11.39,,12:25:00,solinist,Yes,1,top of open end,2024-09-25_NMUSF07_SLC_Mia.csv,Good,,
 9/27/2024,mlondono@unm.edu,Santa Fe,USF09,9/25/2024,10:45:00,6.7,Connected flow,YSI,20,55.01,,10:40:00,43,Yes,7.8,bottom of open end,2024-09-25_NMUSF09_YSI_Edward.csv,Good,,
-9/27/2024,mlondono@unm.edu,Santa Fe,USF10,9/25/2024,11:30:00,8.4,Connected flow,YSI,50,67.03,,13:20:00,36.9,Yes,25.1,bottom of open end,2024-09-25_NMUSF10_YSI_Edward.csv,NA,Cant find file!! BKG fluctuated from 37.3 to 37.5. Look at data to establish. Redid salt slug because first curve was deleted by accident,PT removed 11:41
+9/27/2024,mlondono@unm.edu,Santa Fe,USF10,9/25/2024,12:00:00,8.4,Connected flow,YSI,50,67.03,,13:20:00,36.9,Yes,25.1,bottom of open end,2024-09-25_NMUSF10_YSI_Edward.csv,NA,Cant find file!! BKG fluctuated from 37.3 to 37.5. Look at data to establish. Redid salt slug because first curve was deleted by accident,PT removed 11:41
 9/27/2024,mlondono@unm.edu,Santa Fe,USF11,9/25/2024,12:45:00,7.4,Connected flow,YSI,30,122.84,,12:42:00,51,No,NA,,2024-09-25_NMUSF11_YSI_Edward.csv,Good,BKG 51 -51.1,
 9/27/2024,mlondono@unm.edu,Santa Fe,USF20,9/25/2024,13:00:00,8.3,Connected flow,YSI,45.6,304.75,,13:09:00,44.1,Yes,45,gauge,2024-09-25_NMUSF20_YSI_Jacob.csv,Good,BKG 44 - 44.1. with USF 5 data,
 10/18/2024,xavienartiaga@unm.edu,Santa Fe,USF04,10/16/2024,9:30:00,NA,Connected flow,Solinst ,14,7.92,,9:40:00,solinist,Yes,7,bottom of open end,2024-10-16_NMUSF04_SCL_Fiona.csv,PW,a bit unstable,
@@ -259,7 +259,7 @@ logger in water at 12:20",
 8/31/2025,kanaya1@unm.edu,Santa Fe,USF04,7/16/2025,9:45:00,,Connected flow,Solinst,,10.29,,10:00:00,,Yes,7,bottom of open end,,OK,3.4 away from backround,
 8/31/2025,kanaya1@unm.edu,Santa Fe,USF05,7/16/2025,10:00:00,9.7,Connected flow,YSI,,302.56,,10:05:00,48.5,Yes,8.2,bottom of open end,,Good,,
 8/31/2025,kanaya1@unm.edu,Santa Fe,USF07,7/16/2025,11:00:00,,Connected flow,Solinst,,21.96,,11:05:00,,Yes,3.5,bottom of open end,,Good,,
-8/31/2025,kanaya1@unm.edu,Santa Fe,USF12,7/16/2025,7:30:00,10.7,Connected flow,YSI,,349.61,,7:25:00,51,Yes,26.4,bottom of open end,,Good,,Hobo data downloaded - removed @ 7:57
+8/31/2025,kanaya1@unm.edu,Santa Fe,USF12,7/16/2025,8:30:00,10.7,Connected flow,YSI,,349.61,,7:25:00,51,Yes,26.4,bottom of open end,,Good,,Hobo data downloaded - removed @ 7:57
 8/31/2025,kanaya1@unm.edu,Santa Fe,USF20,7/16/2025,11:30:00,9.9,Connected flow,YSI,,344.26,,11:28:00,46.6,Yes,44.7,gauge ,,Good,,
 8/30/2025,kanaya1@unm.edu,Santa Fe,USF12,7/21/2025,8:00:00,,Connected flow,,,,,,,Yes,26.5,bottom of open end,,NA,,
 8/31/2025,kanaya1@unm.edu,Santa Fe,USF24,7/21/2025,8:30:00,,Connected flow,Solinst,,6.89,,8:35:00,,,,,USF24,PW,.5 away from background and noisy peaks ,
@@ -382,7 +382,7 @@ logger in water at 12:20",
 11/2/2025,kanaya1@unm.edu,Santa Fe,USF29,10/18/2025,12:15:00,,Connected flow,Solinst,,21.42,,,,,,,,Good,,
 11/2/2025,kanaya1@unm.edu,Santa Fe,USF30,10/18/2025,15:30:00,,Pooled,,,,,,,,,,,NA,,
 11/2/2025,kanaya1@unm.edu,Santa Fe,USF31,10/18/2025,15:15:00,5.9,Connected flow,YSI,,11.89,,15:14:00,22.7,,,,,Good,.1 away from background,
-11/2/2025,kanaya1@unm.edu,Santa Fe,USF09,10/21/2025,12:30:00,7.75,Connected flow,YSI,,24.8,,12:39:00,46.8,,,,,Good,,
+11/2/2025,kanaya1@unm.edu,Santa Fe,USF09,10/21/2025,13:00:00,7.75,Connected flow,YSI,,24.8,,12:39:00,46.8,,,,,Good,,
 11/2/2025,kanaya1@unm.edu,Santa Fe,USF10,10/21/2025,13:15:00,5.1,Connected flow,YSI,,149.5,,13:09:00,35.8,Yes,25,bottom of open end,,Good,,
 11/2/2025,kanaya1@unm.edu,Santa Fe,USF11,10/21/2025,14:45:00,6.4,Connected flow,YSI,,73.69,,14:31:00,54.6,Yes,21,bottom of open end,,Good,,
 11/2/2025,kanaya1@unm.edu,Santa Fe,USF12,10/21/2025,7:15:00,5,Connected flow,YSI,,,,,,,,,,NA,,
@@ -390,12 +390,12 @@ logger in water at 12:20",
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF12,2/11/2026,9:15:00,0.2,Connected flow,YSI,,301.01,,9:23:00,49.8,Yes,31,Bottom of open end,,Good,,
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF12,3/13/2026,10:30:00,1.7,Connected flow,YSI,,306.3,,10:38:00,49.8,Yes,28,Bottom of open end,,NA,FIND FILE,
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF12,3/31/2026,10:15:00,5.5,Connected flow,YSI,,308.22,,11:16:00,44.6,Yes,30,Bottom of open end,,NA,FIND FILE,low memory on YSI had to add salt shorty after deploying. coulnt download ran into YSI issue
-6/12/2026,kanaya1@unm.edu,Santa Fe,USF09,3/31/2026,12:15:00,5.2,Connected flow,Solinst,,48.3,,12:35:00,41.9,Yes,15.5,Bottom of open end,,Good,,
-6/12/2026,kanaya1@unm.edu,Santa Fe,USF11,3/31/2026,14:15:00,5.7,Connected flow,YSI,,78.02,,14:15:00,49.7,Yes,15,Bottom of open end,,Good,,"YSI one hour ahead, sampling and slug after rain"
-6/12/2026,kanaya1@unm.edu,Santa Fe,USF10,3/31/2026,,4.6,Connected flow,YSI,,118.88,,,30.3,Yes,23,Bottom of open end,,Good,,"ysi one hour ahead, rained while sampling and while slug"
+6/12/2026,kanaya1@unm.edu,Santa Fe,USF09,3/31/2026,12:00:00,5.2,Connected flow,Solinst,,48.3,,12:35:00,41.9,Yes,15.5,Bottom of open end,,Good,,
+6/12/2026,kanaya1@unm.edu,Santa Fe,USF11,3/31/2026,12:30:00,5.7,Connected flow,YSI,,78.02,,14:15:00,49.7,Yes,15,Bottom of open end,,Good,,"YSI one hour ahead, sampling and slug after rain"
+6/12/2026,kanaya1@unm.edu,Santa Fe,USF10,3/31/2026,11:00:00,4.6,Connected flow,YSI,,118.88,,,30.3,Yes,23,Bottom of open end,,Good,,"ysi one hour ahead, rained while sampling and while slug"
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF20,4/6/2026,11:00:00,2.1,Connected flow,YSI,,243.19,,11:08:00,36.4,Yes,59,gauge,,Good,.1 away from background,S::CAN install day
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF21,4/16/2026,11:30:00,1,Connected flow,YSI,,303.58,,11:35:00,20.6,Yes,35,gauge,,NA,FIND FILE,too much salt
-6/12/2026,kanaya1@unm.edu,Santa Fe,USF12,5/7/2026,8:30:00,2.8,Connected flow,YSI,,380.61,,8:25:00,41.8,Yes,29,Bottom of open end,,Good,.2 away from background,
+6/12/2026,kanaya1@unm.edu,Santa Fe,USF12,5/7/2026,7:00:00,2.8,Connected flow,YSI,,380.61,,8:25:00,41.8,Yes,29,Bottom of open end,,Good,.2 away from background,
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF03,5/7/2026,9:45:00,2.2,Connected flow,YSI,,308.28,,9:53:00,45.6,,,,,Good,,
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF04,5/7/2026,10:30:00,,Connected flow,Solinst,,9.59,,10:50:00,,,,,,Good,,
 6/12/2026,kanaya1@unm.edu,Santa Fe,USF05,5/7/2026,11:00:00,2.4,Connected flow,YSI,,264.98,,11:12:00,39.2,Yes,,Bottom of open end,,Good,.1 away from background,
@@ -477,27 +477,43 @@ logger in water at 12:20",
 7/7/2026,kanaya1@unm.edu,Santa Fe,USF24,12/5/2025,11:15:00,0.4,Connected flow,YSI,,24.23,,13:00:00,55.3,,,,,,,"Memory filled up, so use SpC @55.7 to complete the curve"
 7/7/2026,kanaya1@unm.edu,Santa Fe,USF25,12/5/2025,11:00:00,2.1,Connected flow,YSI,,24.06,,11:00:00,52.5,,,,,,,possible baseline shift on SpC- called it at 54.4
 7/21/2026,kanaya1@unm.edu,Santa Fe,USF19,7/10/2026,15:00:00,5.2,Connected flow,Solinst,,4.62,,15:05:00,33.5,Yes,5,Bottom of open end,,,,
-,kanaya1@unm.edu,Santa Fe,USF22,7/9/2026,12:36:00,14.6,Pooled,Solinst,,,,,,,,,,,,
-,,,USF26,7/9/2026,9:00:00,,Dry,,,,,,,,,,,,,
-,,,USF03,7/9/2026,9:15:00,11.7,Connected flow,YSI,,225.03,,9:20:00,50.5,Yes,24,,,,,
-,,,USF21,7/10/2026,10:30:00,8.7,Connected flow,YSI,,121.48,,10:26:00,30.8,,,,,,,Stream reach shortened to ~15m due to low flow; salt poured in funnel stream
-,,,USF13,7/10/2026,11:00:00,8.1,Connected flow,Solinst,,36.31,,11:15:00,25,Yes,10,Bottom of open end,,,,Stream reach shortened to ~15m due to low flow; salt poured in funnel stream
-,,,USF29,7/10/2026,12:00:00,,Connected flow,Solinst,,5.72,,,,,,,,,,
-,,,USF17,7/10/2026,12:15:00,,,Solinst,,6.05,,12:15:00,,,,,,,,
-,,,USF12,7/9/2026,8:00:00,12,Connected flow,,,,,,,Yes,26.5,Bottom of open end,,,,
-,,,USF15,7/10/2026,13:30:00,,Connected flow,Solinst,,12.05,,13:30:00,,,,,,,,Stream reach shortened
-,,,USF31,7/10/2026,,,,Solinst,,7.65,,,,,,,,,,
-,,,USF24,7/9/2026,8:45:00,11.7,Pooled,,,,,,,,,,,,,PT is dry 
-,,,USF25,7/9/2026,9:00:00,,Dry,,,,,,,,,,,,,PT + scan dry
-,,,USF04,7/9/2026,11:15:00,,Pooled,,,,,,,,,,,,,
-,,,USF41,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
-,,,USF40,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
-,,,USF16,7/10/2026,13:30:00,12.8,Connected flow,YSI,,27.03,,13:40:00,24.6,Yes,9.5,Bottom of open end,,,,"YSI died around 14:10, was quickly restarted. Died again at 15:00, memory filled "
-,,,USF28,7/10/2026,11:45:00,,Connected flow,Solinst,,3.93,,,,,,,,,,Stream reach shortened ~5m
-,,,USF18,,12:15:00,,Connected flow,Solinst,,8.29,,,,,,,,,,
-,,,USF05,7/9/2026,11:00:00,12.2,Connected flow,YSI,,230.25,,10:55:00,0.0532,Yes,6,Bottom of open end,,,,
-,,,USF23,7/9/2026,12:45:00,14.8,Connected flow,Solinst,,5.16,,12:43:00,68.5,,,,,,,stream reached shortened to ~6m
-,,,USF02,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
-,,,USF14,7/10/2026,11:15:00,9.1,Connected flow,YSI,,110.14,,11:25:00,31.3,Yes,17,gauge ,,,,reach adjusted 
-,,,USF20,7/9/2026,13:45:00,15.4,Connected flow,YSI,,219.2,,13:51:00,51.9,Yes,52,gauge ,,,,
-,,,USF07,7/9/2026,12:45:00,15.2,Connected flow,Solinst,,6.07,,,77.5,Yes,2.7,Bottom of open end,,,,"YSI for anallary data, PT mostly out of water"
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF22,7/9/2026,12:36:00,14.6,Pooled,Solinst,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF26,7/9/2026,9:00:00,,Dry,,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF03,7/9/2026,9:15:00,11.7,Connected flow,YSI,,225.03,,9:20:00,50.5,Yes,24,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF21,7/10/2026,10:30:00,8.7,Connected flow,YSI,,121.48,,10:26:00,30.8,,,,,,,Stream reach shortened to ~15m due to low flow; salt poured in funnel stream
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF13,7/10/2026,11:00:00,8.1,Connected flow,Solinst,,36.31,,11:15:00,25,Yes,10,Bottom of open end,,,,Stream reach shortened to ~15m due to low flow; salt poured in funnel stream
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF29,7/10/2026,12:00:00,,Connected flow,Solinst,,5.72,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF17,7/10/2026,12:15:00,,,Solinst,,6.05,,12:15:00,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF12,7/9/2026,8:00:00,12,Connected flow,,,,,,,Yes,26.5,Bottom of open end,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF15,7/10/2026,13:30:00,,Connected flow,Solinst,,12.05,,13:30:00,,,,,,,,Stream reach shortened
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF31,7/10/2026,,,,Solinst,,7.65,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF24,7/9/2026,8:45:00,11.7,Pooled,,,,,,,,,,,,,PT is dry 
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF25,7/9/2026,9:00:00,,Dry,,,,,,,,,,,,,PT + scan dry
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF04,7/9/2026,11:15:00,,Pooled,,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF41,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF40,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF16,7/10/2026,13:30:00,12.8,Connected flow,YSI,,27.03,,13:40:00,24.6,Yes,9.5,Bottom of open end,,,,"YSI died around 14:10, was quickly restarted. Died again at 15:00, memory filled "
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF28,7/10/2026,11:45:00,,Connected flow,Solinst,,3.93,,,,,,,,,,Stream reach shortened ~5m
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF18,,12:15:00,,Connected flow,Solinst,,8.29,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF05,7/9/2026,11:00:00,12.2,Connected flow,YSI,,230.25,,10:55:00,0.0532,Yes,6,Bottom of open end,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF23,7/9/2026,12:45:00,14.8,Connected flow,Solinst,,5.16,,12:43:00,68.5,,,,,,,stream reached shortened to ~6m
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF02,7/9/2026,8:30:00,,Dry,,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF14,7/10/2026,11:15:00,9.1,Connected flow,YSI,,110.14,,11:25:00,31.3,Yes,17,gauge ,,,,reach adjusted 
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF20,7/9/2026,13:45:00,15.4,Connected flow,YSI,,219.2,,13:51:00,51.9,Yes,52,gauge ,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF07,7/9/2026,12:45:00,15.2,Connected flow,Solinst,,6.07,,,77.5,Yes,2.7,Bottom of open end,,,,"YSI for anallary data, PT mostly out of water"
+7/21/2026,kanaya1@unm.edu,Santa Fe,,,,,,,,,,,,,,,,,,
+7/21/2026,kanaya1@unm.edu,Santa Fe,USF10,4/3/2025,14:45:00,,Connected flow,,,115.24,,,,Yes,,,,,,
+8/13/2026,kanaya1@unm.edu,Santa Fe,USF03,8/5/2026,11:00:00,13.5,Connected flow,YSI,,205.16,,11:13:00,53.3,Yes,26,Bottom of open end,,,,"PT moved upstream, new depth ; 18.5"
+,,Santa Fe,USF04,8/5/2026,13:10:00,,Pooled,,,,,,,Yes,6,Bottom of open end,,,,
+,,,USF02,8/6/2026,7:45:00,,Dry,,,,,,,,,,,,,
+,,,USF05,8/5/2026,12:45:00,14.9,Connected flow,YSI,,189.41,,12:46:00,51.8,Yes,10,Bottom of open end,,,,
+,,,USF07,8/5/2026,14:30:00,16.8,Connected flow,YSI,,4.6,,14:50:00,66.1,Yes,out of water,,,,,"reach shortened about 10m, stagnant @ 67.4"
+,,,USF12,8/5/2026,8:00:00,13.4,Connected flow,YSI,,212.53,,8:10:00,55,,,,,,,
+,,,USF20,8/5/2026,,16.6,Connected flow,YSI,,178.56,,16:10:00,50.6,Yes,50.5,gauge ,,,,
+,,,USF22,8/5/2026,16:00:00,,Pooled,,,,,,,,,,,,,
+,,,USF23,8/5/2026,14:45:00,15.6,Connected flow,YSI,,4.04,,14:42:00,69.5,,,,,,,spc fluctuating between 69.4 - 69.6
+,,,USF24,8/5/2026,9:45:00,,Dry,,,,,,,,,,,,,PT out of water 
+,,,USF25,8/5/2026,10:00:00,,Dry,,,,,,,,,,,,,PT and scan out of water 
+,,,USF26,8/5/2026,10:30:00,,Dry,,,,,,,,,,,,,
+,,,USF41,8/5/2026,8:00:00,,Dry,,,,,,,,,,,,,
+,,,USF40,8/5/2026,7:45:00,,Dry,,,,,,,,,,,,,

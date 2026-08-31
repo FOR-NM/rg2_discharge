@@ -57,6 +57,8 @@ library(signal) # butterworth filter
 # this is the formatted folder
 Saltslugs <- "data/formatted/" 
 figure_folder <- "figures/"
+output_path <- "data/final/"
+dir.create(output_path)
 
 # list all CSV files in the folder
 Saltslugs_csvs <- list.files(path = Saltslugs, pattern = "\\.csv$")
@@ -408,45 +410,41 @@ for (i in seq_along(csv_clean)) {
 }
 
 ####################################
-#### Save Q data frame to Drive #### TO DO, fix this for your workflow 
+#### Save Q data frame to Local folder ####
 ####################################
 
-#save Q dataframe locally first 
+#save Q dataframe locally first , not uploading to drive, not merging with QuEST data for now 
 write.csv(mergedQ, "field_data/Q.csv")
 
 # download existing Q file, append new results, re-upload
-(Q_drive <- drive_get("https://drive.google.com/drive/folders/1UkRaYRBePgY9XU90_3DvURNGGEWbCew0"))
-Q_files  <- drive_ls(Q_drive)
+#(Q_drive <- drive_get("https://drive.google.com/drive/folders/1UkRaYRBePgY9XU90_3DvURNGGEWbCew0"))
+#Q_files  <- drive_ls(Q_drive)
 
 #drive_download(as_id(Q_files$id), path = "field_data/Q.csv", overwrite = TRUE)
 
-Q <- read.csv("field_data/Q.csv") %>%
-  mutate(Date = as.Date(Date, format = "%Y-%m-%d")) %>%
-  rbind(mergedQ)
+#Q <- read.csv("field_data/Q.csv") %>%
+#  mutate(Date = as.Date(Date, format = "%Y-%m-%d")) %>%
+#  rbind(mergedQ)
 
-write.csv(Q, "field_data/Q.csv", row.names = FALSE, quote = FALSE)
+#write.csv(Q, "field_data/Q.csv", row.names = FALSE, quote = FALSE)
 
-drive_upload(
-  media = "field_data/Q.csv",
-  path  = as_id("1UkRaYRBePgY9XU90_3DvURNGGEWbCew0")
-)
+#drive_upload(
+#  media = "field_data/Q.csv",
+#  path  = as_id("1UkRaYRBePgY9XU90_3DvURNGGEWbCew0")
+#)
 
 ####################################
 #### Save edited slugs to local folder #### 
 
 #need /final/ folder in data 
 ####################################
-#for (i in seq_along(csvs)) {
-#  df        <- csvs[[i]]
-#  file_path <- paste0("slugs/", Saltslugs_csvs$name[i])
+for (i in seq_along(csvs)) {
+  df        <- csvs[[i]]
+  file_path <- paste0(output_path, Saltslugs_csvs[i])
   
-#  write.csv(df, file_path, row.names = FALSE, quote = FALSE)
+  write.csv(df, file_path, row.names = FALSE, quote = FALSE)
+}
   
-#  drive_upload(
-#    media = file_path,
-#    path  = as_id("1LePC-TivkFR1xwa65DdoGAIuu5WapW6")
-#  )
-#}
 
 ####################################
 #### End of Script####

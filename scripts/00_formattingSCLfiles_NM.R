@@ -23,6 +23,7 @@ library(data.table)
 # set up path 
 Saltslugs <- "data/raw/"
 output_path<-"data/formatted/"
+dir.create(output_path)
 
 # list and filter CSV files with "SCL" in their names
 SCL_files <- list.files(path = Saltslugs, pattern = "\\.csv$")
