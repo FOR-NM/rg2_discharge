@@ -17,16 +17,6 @@ library(tidyverse)
 library(data.table)
 
 
-####################################
-## Clear folders that we will use ##
-####################################
-# list and delete all files in the folder
-#files <- list.files(path = "slugs", full.names = TRUE)
-#file.remove(files)
-
-#files <- list.files(path = "googledrive", full.names = TRUE)
-#file.remove(files)
-
 #####################
 #### Import Data ####
 #####################
@@ -80,14 +70,13 @@ for (i in seq_along(scl_list)) {
 #### Save edited slugs to Local folder ####
 ####################################
 # loop through each data frame in the list
-overwrite_flag=TRUE 
+overwrite_flag=TRUE # can be switched on or off to overwrite files 
 
 for (i in seq_along(scl_list)) {
   # Access the current data frame
   df <- scl_list[[i]]
   filename<- paste0(output_path, SCL_files[i])
-  
-  # Do not overwrite formatted files: To do:  have a flag to switch this on or off 
+
   if (file.exists(filename)) {
     if(overwrite_flag){
       write.csv(df, filename, row.names=FALSE, quote=FALSE)

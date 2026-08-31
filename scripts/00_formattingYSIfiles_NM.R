@@ -7,9 +7,6 @@
 # Modified by Marcela Mendoza 6/16/2026  FOR_NM 
 
 
-# Manual edits: 
-# 2026-01-20_NMUSF02_NMUSF24_YSI_Teak has to be separated into two files 
-# run split_file.R  (R folder) with appropriate index 
 
 ##############
 ## Packages ##
@@ -33,7 +30,7 @@ YSI_files <- YSI_files[grepl("YSI", YSI_files)]
 # Create an empty list to store the cleaned data frames
 ysi_list <- lapply(seq_along(YSI_files), function(i) {
   # read the CSV file, skipping the first row (header is on row 2)
-  read.csv(paste0(Saltslugs, "/", YSI_files[i]), skip = 1, sep = ";", header = TRUE)
+  read.csv(paste0(Saltslugs, YSI_files[i]), skip = 1, sep = ";", header = TRUE)
 })
 
 # assign names to the list elements based on the file names
@@ -60,7 +57,7 @@ for (i in seq_along(ysi_list)) {
 #### Save edited slugs to local folder ####
 ####################################
 
-overwrite_flag=TRUE 
+overwrite_flag=TRUE  # can be switched on or off based on if you want to overwrite files 
 # loop through each data frame in the list
 for (i in seq_along(ysi_list)) {
   # Access the current data frame
@@ -68,7 +65,6 @@ for (i in seq_along(ysi_list)) {
   filename<- paste0(output_path, YSI_files[i])
   
   # save new data frame
-  # Do not overwrite formatted files: To do:  have a flag to switch this on or off 
   if (file.exists(filename)) {
     if(overwrite_flag){
       write.csv(df, filename, row.names=FALSE, quote=FALSE)
@@ -87,6 +83,7 @@ for (i in seq_along(ysi_list)) {
 #### Split file for 01_20_26 ####
 ####################################
 # 2026-01-20_NMUSF02_NMUSF24_YSI_Teak has to be separated into two files 
+# run split_file.R  (R folder) with appropriate index 
 
 source('R/split_file.R') 
   

@@ -49,12 +49,6 @@ library(ggplot2)
 library(signal) # butterworth filter 
 
 
-####################################
-## Clear folders that we will use ##
-####################################
-#file.remove(list.files(path = "saltslug_figs", full.names = TRUE))
-#file.remove(list.files(path = "googledrive",   full.names = TRUE))
-#file.remove(list.files(path = "data",          full.names = TRUE))
 
 #################################
 #### Import & Visualize Data ####
@@ -438,29 +432,27 @@ drive_upload(
 )
 
 ####################################
-#### Save edited slugs to Drive ####
+#### Save edited slugs to local folder #### 
+
+#need /final/ folder in data 
 ####################################
-for (i in seq_along(csvs)) {
-  df        <- csvs[[i]]
-  file_path <- paste0("slugs/", Saltslugs_csvs$name[i])
+#for (i in seq_along(csvs)) {
+#  df        <- csvs[[i]]
+#  file_path <- paste0("slugs/", Saltslugs_csvs$name[i])
   
-  write.csv(df, file_path, row.names = FALSE, quote = FALSE)
+#  write.csv(df, file_path, row.names = FALSE, quote = FALSE)
   
-  drive_upload(
-    media = file_path,
-    path  = as_id("1LePC-TivkFR1xwa65DdoGAIuu5WapW6")
-  )
-}
+#  drive_upload(
+#    media = file_path,
+#    path  = as_id("1LePC-TivkFR1xwa65DdoGAIuu5WapW6")
+#  )
+#}
 
 ####################################
 #### End of Script####
 ####################################
 ####################################
 #### TO DO####
-# improve changepoint detection algorithm: tried multiple algorithms and filters
-  # tried second derivative method ( did you try on smooth?)
-  # tried changepoint of peaks and valleys method 
-  #tried hampel filtering 
 #Fix directories and Gdrive flows , keep it local and have a separate script to upload files 
 
 ####################################
