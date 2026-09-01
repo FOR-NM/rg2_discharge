@@ -436,7 +436,7 @@ write.csv(mergedQ, "field_data/Q.csv")
 ####################################
 #### Save edited slugs to local folder #### 
 
-#need /final/ folder in data 
+# /final folder in data 
 ####################################
 for (i in seq_along(csvs)) {
   df        <- csvs[[i]]

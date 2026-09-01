@@ -13,8 +13,6 @@
 ##############
 # library(googledrive) 
 
-### TO DO #### 
-# create directory for formatted files 
 
 #####################
 #### Import Data ####
