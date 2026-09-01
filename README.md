@@ -10,7 +10,9 @@ In this repo you will find semi-automated discharge calculations for salt slugs 
 
 ```text
 ├── data   # where raw and formatted YSI and SCL files should be stored 
-├── outputs  #outputs for the 
+          # subdirectories to add : \final \formatted \raw 
+├── field_data # where Q and Salt info are stored
+├── figures # where figures are stored
 ├── R   #aider functions/ scripts 
 │   ├── removeInitialNoise.R
 │   └── split_file.R

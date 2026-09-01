@@ -9,3 +9,5 @@ data/*
 !data/.gitkeep
 figures/*
 !figures/.gitkeep
+field_data/*
+!field_data/.gitkeep

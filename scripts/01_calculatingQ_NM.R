@@ -5,8 +5,8 @@
 ##Author: Manuela Londono
 ##Github Link: 
 
-#Added rolling mean smoothing, dropping trailing zeros in SpC, improved changepoint detection,
-#interactive plots to remove initial noise 
+#MM: Added rolling mean smoothing, dropping trailing zeros in SpC, automated curve start detection,
+#added interactive plots to remove initial noise if needed
 
 ## Script to estimate discharge using dilution gauging for multiple files at a time for the NM site
 ## press Command+Option+O to collapse all sections and get an overview of the workflow!
